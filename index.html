@@ -16,7 +16,7 @@
         
         <body class="d-flex justify-content-center align-items-center">
 
-            <main class="debug" id="app">
+            <main class="debug d-flex" id="app">
 
                 <!-- Qui inizia l'aside di Boolzapp -->
                 <aside class="d-flex flex-column">
@@ -27,7 +27,7 @@
 
                             <div class="col-6 d-flex align-items-center">
                                 <div id="user-profile">
-                                    <img :src="user.avatar" alt="">
+                                    <img :src="user.avatar" :alt="user.name">
                                 </div>
 
                                 <div>
@@ -82,7 +82,7 @@
                     <!-- Qui inizia la rubrica delle Chat -->
 
                     <div id="chat-container" >
-                        <div class="chat row g-0 align-items-center" v-for="(contact, i) in contacts">
+                        <div class="chat row g-0" v-for="(contact, i) in contacts">
 
                             <div class="col-auto p-3" id="user-img">
                                 <img :src="contacts[i].avatar" alt="">
@@ -97,10 +97,24 @@
                                     Ultimo messaggio inviato
                                 </small>
                             </div>
+
+                            <div class="col-auto offset-6">
+                                12:00
+                            </div>
                         </div>
                     </div>
 
                 </aside>
+
+                <div id="chat-active-container">
+                    <header>
+                        <div class="row">
+                            <div class="col-auto d-flex align-items-center">
+                                <img :src="contacts[0].avatar" :alt="contacts[0].name">
+                            </div>
+                        </div>  
+                    </header>
+                </div>
 
             </main>
             <!-- Importazione Vue -->
