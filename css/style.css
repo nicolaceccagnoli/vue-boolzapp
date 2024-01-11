@@ -1,4 +1,13 @@
 /* 
+
+    FILE CSS
+
+*/
+
+@import url(root.css);
+
+
+/* 
     RESET
 */
 * {
@@ -65,14 +74,22 @@ aside {
 #user-menu {
     width: 100px;
     height: 100%;
+    margin-right: var(--main-margin-size);
 }
+
 #user-menu i {
-    font-size: 18px;
-    color: #B1B4B8;
+    font-size: var(--icons-main-size);
+    color: var(--icons-color);
+    margin-right: var(--secondary-margin-size);
 }
+
+#user-menu i:last-of-type {
+}
+
 #notifications {
     width: 100%;
     background-color: #8EDAFC;
+    padding-left: var(--main-padding-size);
 }
 
 #notifications #bell {
@@ -84,7 +101,7 @@ aside {
 
 #notifications #bell i {
     font-size: 24px;
-    color: #8EDAFC;
+    color: var(--icons-bell-color);
 }
 
 #notifications div:nth-of-type(2) span {
@@ -97,6 +114,17 @@ aside {
     font-size: 14px;
 }
 
+.search-chat{
+    padding: var(--secondary-padding-size);
+}
+
+.search-chat i {
+    margin-left: var(--secondary-margin-size);
+    margin-right: var(--secondary-margin-size);
+    color: var(--icons-color);
+    font-size: 1rem;
+}
+
 /* 
 
    CHAT-CONTAINER
@@ -104,9 +132,23 @@ aside {
 */
 
 #chat-container {
-    background-color: lightgreen;
+    background-color: #FFFFFF;
+    overflow: auto;
+    height: 100%;
 }
 
+#chat-container #user-img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.chat {
+    border-bottom: 1px solid #d6dce3f4;
+}
+
+.message {
+    color: var(--message-main-color);
+}
 /* 
 
     DEBUG

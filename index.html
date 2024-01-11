@@ -36,9 +36,9 @@
                             </div>
 
                             <div id="user-menu" class="col-6 d-flex align-items-center">
-                                <i class="fa-solid fa-circle-notch m-2"></i>
-                                <i class="fa-solid fa-message m-2"></i>
-                                <i class="fa-solid fa-ellipsis-vertical m-2"></i>
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                             
                         </div>
@@ -46,7 +46,7 @@
                         <!-- Qui inizia il menù di gestione delle Notifiche -->
 
                         <div class="row g-0">
-                            <div id="notifications" class="col-auto d-flex align-items-center ps-3">
+                            <div id="notifications" class="col-auto d-flex align-items-center">
                                 <div id="bell" class="d-flex justify-content-center align-items-center">
                                     <i class="fa-solid fa-bell-slash"></i>
                                 </div>
@@ -66,9 +66,11 @@
 
                         <div class="row m-0">
 
-                            <div class="search-chat p-2">
+                            <div class="search-chat">
                                 <div class="input-group flex-nowrap">
-                                    <span class="input-group-text rounded-start-1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                    <span class="input-group-text rounded-start-1">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
                                     <input type="text" class="form-control rounded-end-1" placeholder="Cerca o inizia una nuova chat">
                                   </div>
                             </div>
@@ -79,8 +81,23 @@
 
                     <!-- Qui inizia la rubrica delle Chat -->
 
-                    <div id="chat-container" class="flex-grow-1">
+                    <div id="chat-container" >
+                        <div class="chat row g-0 align-items-center" v-for="(contact, i) in contacts">
 
+                            <div class="col-auto p-3" id="user-img">
+                                <img :src="contacts[i].avatar" alt="">
+                            </div>
+
+                            <div class="col-auto">
+                                <b>
+                                    {{ contacts[i].name }}
+                                </b>
+                                <br>
+                                <small class="message">
+                                    Ultimo messaggio inviato
+                                </small>
+                            </div>
+                        </div>
                     </div>
 
                 </aside>

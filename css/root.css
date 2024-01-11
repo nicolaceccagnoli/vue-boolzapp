@@ -1,0 +1,10 @@
+:root {
+    --icons-color: #B1B1B1;
+    --icons-main-size: 24px;
+    --icons-bell-color: #8EDAFC;
+    --main-padding-size: 20px;
+    --secondary-padding-size:10px;
+    --main-margin-size: 20px;
+    --secondary-margin-size: 16px;
+    --message-main-color:#E0E0DA;
+}
