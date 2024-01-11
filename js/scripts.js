@@ -8,7 +8,7 @@ createApp({
             message: 'Vue Boolzapp',
 
             contacts: [
-                
+
                 {
                     name: 'Michele',
                     avatar: './img/avatar_1.png',

@@ -10,3 +10,34 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 
+
+    BODY
+
+*/
+
+/* body {
+    height:100%;
+    background: linear-gradient(top, #d808a4 50%, black 50%);
+    background: linear-gradient(top, #d808a4 50%,black 50%);
+    background: linear-gradient(to bottom, #d808a4 50%,black 50%);
+    height: 229vh;
+} */
+
+/* body {
+    height: 100vh;
+    background: 
+      linear-gradient(to bottom, transparent 50%, black 50%), 
+      linear-gradient(100deg, #8a07ff, #f500d7);
+  } */
+
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #DDDBD1;
+    background-image: linear-gradient(to right, #009688, #009688);
+    background-size: 100% 15%;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
