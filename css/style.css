@@ -17,90 +17,59 @@ html {
 
 */
 
-  body {
-    width: 100vw;
+body {
     height: 100vh;
-    background-color: #DDDBD1;
-    background-image: linear-gradient(to right, #009688, #009688);
-    background-size: 100% 15%;
-    background-repeat: no-repeat;
-    position: relative;
-  }
+    background: linear-gradient(to bottom, #009688 15%, #dbdbd4 15%);
+}
 
-  /* 
-  
+/* 
+
     MAIN
 
-  */
-
-  main{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  #container-web {
-    height: 900px;
-    width: 1550px;
-  }
-
-  /* 
-  
-    NAV DELLE CHAT
-
-  */
-
-  nav {
-    height: 100%;
-    width: 40%;
-  }
-
-  nav header {
-    height: 60px;
-  }
-
-  nav #user-image {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-  }
-
-  #user-name {
-    font-size: 16px;
-    line-height: 16px;
-  }
-
-/* 
-
-  DEBUG
-
 */
 
-/* 
-
-  CONTAINER PRINCIPALE
-
-*/
-
-.debug#container-web{
+main {
+    height: 95%;
+    width: 80%;
     background-color: red;
 }
 
 /* 
 
-    NAV DELLE CHAT
+    NAV
 
 */
 
-.debug nav {
+aside {
+    width: 40%;
+    height: 100%;
     background-color: lightcoral;
 }
 
-.debug header {
+/* 
+
+    NAV HEADER
+
+*/
+
+header {
+    height: 25%;
     background-color: blue;
 }
 
-.debug nav #user-image {
+#user-nav {
+    height: 70px;
+}
+
+#user-profile {
+    height: 50px;
+    width: 50px;
     background-color: white;
+    border-radius: 50%;
+}
+
+#user-menu {
+    width: 100px;
+    height: 100%;
+    background-color: purple;
 }

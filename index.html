@@ -10,35 +10,47 @@
 
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    </head>
-    <body>
 
-        <main id="app">
-            <!-- Qui inserisco il contenitore della mia Web App -->
-            <div class="debug" id="container-web">
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+        
+        <body class="d-flex justify-content-center align-items-center">
 
-                <nav>
-                    <header class="d-flex align-items-center">
-                        <div id="user-image" class="ms-2">
-                        
+            <main id="app">
+
+                <!-- Qui inizia l'aside di Boolzapp -->
+                <aside>
+                    <!-- Qui inizia l'header -->
+                    <header>
+                        <!-- Qui inizia il menù profilo utente -->
+                        <div class="row m-0 align-items-center justify-content-between" id="user-nav" >
+
+                            <div class="col-6 d-flex align-items-center">
+                                <div id="user-profile">
+                                
+                                </div>
+
+                                <div>
+                                    {{ user.name }}
+                                </div>
+                            </div>
+
+                            <div id="user-menu" class="col-6">
+                                C
+                            </div>
+                            
                         </div>
 
-                        <div id="user-name">
-                            {{ user }}
-                        </div id  did="user-name">
-    
                     </header>
+                </aside>
 
-                </nav>
-                
-            </div>
-        </main>
+            </main>
+            <!-- Importazione Vue -->
+            <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-        <!-- Importazione Vue -->
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+            <!-- Mio Script -->
+            <script src="js/scripts.js" type="text/javascript"></script>
 
-        <!-- Mio Script -->
-        <script src="js/scripts.js" type="text/javascript"></script>
+        </body>
 
-    </body>
 </html>

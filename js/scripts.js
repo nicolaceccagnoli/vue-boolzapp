@@ -5,7 +5,9 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            user: 'Nicola',
+            user: {
+                name: 'Nicola',
+            },
 
             contacts: [
 
