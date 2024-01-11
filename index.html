@@ -16,10 +16,10 @@
         
         <body class="d-flex justify-content-center align-items-center">
 
-            <main id="app">
+            <main class="debug" id="app">
 
                 <!-- Qui inizia l'aside di Boolzapp -->
-                <aside>
+                <aside class="d-flex flex-column">
                     <!-- Qui inizia l'header -->
                     <header>
                         <!-- Qui inizia il menù profilo utente -->
@@ -35,13 +35,44 @@
                                 </div>
                             </div>
 
-                            <div id="user-menu" class="col-6">
+                            <div id="user-menu" class="col-6 d-flex align-items-center">
                                 C
                             </div>
                             
                         </div>
 
+                        <!-- Qui inizia il menù di gestione delle Notifiche -->
+
+                        <div class="row m-0">
+                            <div id="notifications" class="col-auto">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Qui inizia la search bar delle chat -->
+
+                        <div class="row m-0">
+
+                            <div class="col-12 bg-white p-1 ">
+
+                                <button class="search-button px-2 ">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+
+                                <input class="search-input" placeholder="Cerca o inizia una nuova chat" type="text">
+
+                            </div>
+
+                        </div>
+
                     </header>
+
+                    <!-- Qui inizia la rubrica delle Chat -->
+
+                    <div id="chat-container" class="flex-grow-1">
+
+                    </div>
+
                 </aside>
 
             </main>

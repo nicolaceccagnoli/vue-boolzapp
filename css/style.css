@@ -52,24 +52,74 @@ aside {
 
 */
 
-header {
-    height: 25%;
-    background-color: blue;
-}
-
 #user-nav {
-    height: 70px;
+    height: 65px;
 }
 
 #user-profile {
     height: 50px;
     width: 50px;
-    background-color: white;
     border-radius: 50%;
 }
 
 #user-menu {
     width: 100px;
     height: 100%;
+}
+
+#notifications {
+    width: 100%;
+}
+
+.search-button{
+    background-color: white;
+    border:1px solid lightgray;
+    color: gray;
+    width: 10%;
+}
+
+.search-input{
+    width: 90%;
+    border:1px solid lightgray;
+}
+
+
+/* 
+
+   CHAT-CONTAINER
+
+*/
+
+#chat-container {
+    background-color: lightgreen;
+}
+
+/* 
+
+    DEBUG
+
+*/
+
+
+/* 
+
+    NAV HEADER
+
+*/
+
+/* .debug header {
+    background-color: blue;
+} */
+
+.debug #user-profile {
+    background-color: white;
+}
+
+.debug #user-menu {
     background-color: purple;
+}
+
+.debug #notifications {
+    background-color: lightblue;
+    height: 100px;
 }
