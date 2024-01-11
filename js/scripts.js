@@ -5,7 +5,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            message: 'Vue Boolzapp',
+            user: 'Nicola',
 
             contacts: [
 
