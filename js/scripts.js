@@ -6,7 +6,8 @@ createApp({
     data() {
         return {
             user: {
-                name: 'Nicola',
+                name: 'Sofia',
+                avatar: './img/avatar_io.jpg'
             },
 
             contacts: [

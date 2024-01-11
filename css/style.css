@@ -43,7 +43,7 @@ main {
 aside {
     width: 40%;
     height: 100%;
-    background-color: lightcoral;
+    background-color:#EAEAEA;
 }
 
 /* 
@@ -56,7 +56,7 @@ aside {
     height: 65px;
 }
 
-#user-profile {
+#user-profile img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -66,23 +66,36 @@ aside {
     width: 100px;
     height: 100%;
 }
-
+#user-menu i {
+    font-size: 18px;
+    color: #B1B4B8;
+}
 #notifications {
     width: 100%;
+    background-color: #8EDAFC;
 }
 
-.search-button{
-    background-color: white;
-    border:1px solid lightgray;
-    color: gray;
-    width: 10%;
+#notifications #bell {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #F3FBFF;
 }
 
-.search-input{
-    width: 90%;
-    border:1px solid lightgray;
+#notifications #bell i {
+    font-size: 24px;
+    color: #8EDAFC;
 }
 
+#notifications div:nth-of-type(2) span {
+    font-weight: 600;
+}
+
+#notifications div:nth-of-type(2) a {
+    text-decoration: underline;
+    color: grey;
+    font-size: 14px;
+}
 
 /* 
 
@@ -111,15 +124,15 @@ aside {
     background-color: blue;
 } */
 
-.debug #user-profile {
+/* .debug #user-profile {
     background-color: white;
-}
+} */
 
-.debug #user-menu {
+/* .debug #user-menu {
     background-color: purple;
-}
+} */
 
 .debug #notifications {
-    background-color: lightblue;
+    /* background-color: lightblue; */
     height: 100px;
 }
