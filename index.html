@@ -30,7 +30,7 @@
                                     <img :src="user.avatar" :alt="user.name">
                                 </div>
 
-                                <div>
+                                <div id="user-name">
                                     {{ user.name }}
                                 </div>
                             </div>
@@ -42,9 +42,9 @@
                             </div>
                             
                         </div>
+                        <!-- Qui finisce il menù profilo utente -->
 
                         <!-- Qui inizia il menù di gestione delle Notifiche -->
-
                         <div class="row g-0">
                             <div id="notifications" class="col-auto d-flex align-items-center">
                                 <div id="bell" class="d-flex justify-content-center align-items-center">
@@ -55,36 +55,37 @@
                                         Ricevi notifiche di nuovi messaggi
                                     </span>
                                     <br>
-                                    <a>
+                                    <a href="#">
                                         Attiva notifiche desktop
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        <!-- Qui finisce il menù di gestione delle Notifiche -->
 
                         <!-- Qui inizia la search bar delle chat -->
 
-                        <div class="row m-0">
+                        <div class="row g-0">
 
-                            <div class="search-chat">
+                            <div id="search-chat" class="col">
                                 <div class="input-group flex-nowrap">
-                                    <span class="input-group-text rounded-start-1">
+                                    <span class="input-group-text rounded-0 ">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </span>
-                                    <input type="text" class="form-control rounded-end-1" placeholder="Cerca o inizia una nuova chat">
+                                    <input type="text" class="form-control rounded-0 " placeholder="Cerca o inizia una nuova chat">
                                   </div>
                             </div>
 
                         </div>
-
+                        <!-- Qui finisce la search bar delle chat -->
                     </header>
 
                     <!-- Qui inizia la rubrica delle Chat -->
 
                     <div id="chat-container" >
-                        <div class="chat row g-0" v-for="(contact, i) in contacts">
+                        <div class="single-chat row g-0" v-for="(contact, i) in contacts">
 
-                            <div class="col-auto p-3" id="user-img">
+                            <div class="col-auto user-img">
                                 <img :src="contacts[i].avatar" alt="">
                             </div>
 
@@ -103,18 +104,63 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Qui finisce la rubrica delle Chat -->
 
                 </aside>
+                <!-- Qui finisce l'aside di Boolzapp -->
 
-                <div id="chat-active-container">
+                <!-- Qui inizia il Menu delle Chat con gli altri utenti -->
+                <div id="chat-active-container" class="d-flex flex-column">
+
+                    <!-- Qui inizia l'header che mostra l'utente con cui stiamo parlando -->
                     <header>
-                        <div class="row">
-                            <div class="col-auto d-flex align-items-center">
-                                <img :src="contacts[0].avatar" :alt="contacts[0].name">
+                        <div class="chat-user-profile row m-0 h-100 align-items-center justify-content-between">
+
+                            <div class="col-6 d-flex align-items-center">
+                                <div>
+                                    <img :src="contacts[0].avatar" :alt="contacts[0].name">
+                                </div>
+                                <div class="chat-user-name">
+                                    {{ contacts[0].name }}
+                                </div>
                             </div>
+
+                            <div id="chat-user-menu" class="col-6 d-flex align-items-center">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                            
                         </div>  
                     </header>
+                    <!-- Qui finisce l'header che mostra l'utente con cui stiamo parlando -->
+
+                    <!-- Qui inizia la chat -->
+                    <main id="chat" class="flex-grow-1">
+
+                    </main>
+                    <!-- Qui finisce la chat -->
+
+                    <!-- Qui inizia il footer con l'input di invio dei nuovi messaggi -->
+                    <footer>
+
+                        <div class="row g-0 h-100 " id="new-chat">
+                            <div class="col input-group flex-nowrap">
+                                <span class="input-group-text rounded-0">
+                                    <i class="fa-regular fa-face-smile"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                                <span class="input-group-text rounded-0">
+                                    <i class="fa-solid fa-microphone"></i>
+                                </span>
+                            </div>
+                        </div>
+                    
+                    </footer>
+                    <!-- Qui finisce il footer con l'input di invio dei nuovi messaggi -->
+
                 </div>
+                <!-- Qui finisce il Menu delle Chat con gli altri utenti -->
 
             </main>
             <!-- Importazione Vue -->
