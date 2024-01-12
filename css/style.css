@@ -218,11 +218,44 @@ aside header {
 #chat {
     background-image: url(../img/mine.jpg);
     width: 100%;
+    padding: var(--main-padding-size);
 }
 
 footer {
     padding: var(--secondary-padding-size);
     background-color: var(--menu-bg-color);
+}
+
+.small-chat-container{
+    width: 80%;
+}
+
+.single-message-container {
+    padding-bottom: var(--secondary-padding-size);
+}
+
+.received .single-message-item {
+    min-width: var(--message-min-width);
+    max-width: var(--message-max-width);
+    min-height: var(--padding-message-size);
+    background-color: var(--received-message-color);
+    padding: var( --padding-message-size);
+    border-radius: var(--border-radius-message);
+}
+
+.sent .single-message-item {
+    min-width: var(--message-min-width);
+    max-width: var(--message-max-width);
+    min-height: var(--padding-message-size);
+    background-color: var(--sent-message-color);
+    padding: var( --padding-message-size);
+    border-radius: var(--border-radius-message);
+}
+
+.message-item {
+    text-align: end;
+    font-size: 10px;
+    color: var(--message-main-color);
 }
 
 /* 

@@ -1,15 +1,23 @@
 :root {
     --main-footer-header-size: 65px;
-    --icons-color: #B1B1B1;
     --icons-main-size: 24px;
-    --icons-bell-color: #8EDAFC;
     --main-padding-size: 20px;
     --secondary-padding-size:10px;
     --chat-padding-size: 14px;
     --main-margin-size: 20px;
     --secondary-margin-size: 16px;
-    --message-main-color:#cdcdcd;
     --chat-user-img-size: 60px;
     --user-profile-img-size: 50px;
+    --message-min-width: 150px;
+    --message-max-width: 300px;
+    --message-min-height: 50px;
+    --padding-message-size: 12px;
+    --border-radius-message: 8px;
+    --sent-message-color: #D5F9BA;
+    --received-message-color: #FFFFFF;   
+     --icons-color: #B1B1B1;
     --menu-bg-color:#EAEAEA;
+    --message-main-color:#cdcdcd;
+    --icons-bell-color: #8EDAFC;
+
 }
