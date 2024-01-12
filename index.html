@@ -98,26 +98,29 @@
                             'active': i == activeContact
                         }">
 
-                        <div v-if="contact.visible === true" class="single-chat row g-0">
+                            <div 
+                            v-if="contact.visible === true"
+                             class="single-chat row g-0">
 
-                            <div class="col-auto user-img">
-                                <img :src="contacts[i].avatar" alt="">
+                                <div class="col-auto user-img">
+                                    <img :src="contacts[i].avatar" alt="">
+                                </div>
+
+                                <div class="col-auto">
+                                    <b>
+                                        {{ contact.name }}
+                                    </b>
+                                    <br>
+                                    <small class="message">
+                                        {{ contacts[i].messages[contacts[i].messages.length-1].message }}
+                                    </small>
+                                </div>
+
+                                <div class="col-auto flex-grow-1 pe-2">
+                                    {{ contacts[i].messages[contacts[i].messages.length-1].date.split(' ', 2)[1] }}
+                                </div>
                             </div>
 
-                            <div class="col-auto">
-                                <b>
-                                    {{ contact.name }}
-                                </b>
-                                <br>
-                                <small class="message">
-                                    {{ contacts[i].messages[contacts[i].messages.length-1].message }}
-                                </small>
-                            </div>
-
-                            <div class="col-auto flex-grow-1 pe-2">
-                                {{ contacts[i].messages[contacts[i].messages.length-1].date.split(' ', 2)[1] }}
-                            </div>
-                        </div>
                         </div>
                     </div>
                     <!-- Qui finisce la rubrica delle Chat -->
@@ -168,7 +171,9 @@
                     <main id="chat" class="flex-grow-1 d-flex justify-content-center align-items-end">
 
                         <div class="small-chat-container">
-                            <div v-for="(message, singleMessage) in contacts[activeContact].messages" class="single-message-container d-flex"
+                            <div
+                            v-for="(message, singleMessage) in contacts[activeContact].messages" 
+                            class="single-message-container d-flex"
                             :class="{
                                 'sent justify-content-end': message.status == 'sent',
                                 'received': message.status == 'received'
@@ -197,7 +202,9 @@
                                         <i class="fa-regular fa-face-smile"></i>
                                     </button>
                                 </span>
-                                <input v-model="newMessage" @keyup.enter="newObjMessage()" type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
+                                <input
+                                v-model="newMessage" @keyup.enter="newObjMessage()" 
+                                type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
                                 <span class="input-group-text rounded-0 border-0">
                                     <button>
                                         <i class="fa-solid fa-microphone"></i>
