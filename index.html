@@ -108,12 +108,12 @@
                                 </b>
                                 <br>
                                 <small class="message">
-                                    Ultimo messaggio inviato
+                                    {{ contacts[i].messages[contacts[i].messages.length-1].message }}
                                 </small>
                             </div>
 
-                            <div class="col-auto offset-6">
-                                12:00
+                            <div class="col-auto">
+                                {{ contacts[i].messages[contacts[i].messages.length-1].date.split(' ', 2)[1] }}
                             </div>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                     <!-- Qui finisce l'header che mostra l'utente con cui stiamo parlando -->
 
                     <!-- Qui inizia la chat -->
-                    <main id="chat" class="flex-grow-1 d-flex justify-content-center">
+                    <main id="chat" class="flex-grow-1 d-flex justify-content-center align-items-end">
 
                         <div class="small-chat-container">
                             <div v-for="(message, singleMessage) in contacts[activeContact].messages" class="single-message-container d-flex"
