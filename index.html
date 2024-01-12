@@ -93,10 +93,12 @@
                     <div id="chat-container"> 
                         <div
                         @click="contactShow(i)"
-                        class="single-chat row g-0" v-for="(contact, i) in contacts"
+                        v-for="(contact, i) in contacts"
                         :class="{
                             'active': i == activeContact
                         }">
+
+                        <div v-if="contact.visible === true" class="single-chat row g-0">
 
                             <div class="col-auto user-img">
                                 <img :src="contacts[i].avatar" alt="">
@@ -112,9 +114,10 @@
                                 </small>
                             </div>
 
-                            <div class="col-auto flex-grow-1">
+                            <div class="col-auto flex-grow-1 pe-2">
                                 {{ contacts[i].messages[contacts[i].messages.length-1].date.split(' ', 2)[1] }}
                             </div>
+                        </div>
                         </div>
                     </div>
                     <!-- Qui finisce la rubrica delle Chat -->

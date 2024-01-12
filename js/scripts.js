@@ -230,13 +230,21 @@ createApp({
         searchChat() {
 
             // Qui aggiorno nuovamente l'array che ho già riempito in mounted() e ci inserisco anche la stringa filtrata nell''input
-            this.contacts = [...this.newContactsObj]
+            // this.contacts = [...this.newContactsObj]
 
-            const newSearchContact = this.searchContact.toLowerCase();
+            // const newSearchContact = this.searchContact.toLowerCase();
 
-            this.contacts = this.contacts.filter((contact) => 
-            contact.name.toLowerCase().includes(newSearchContact)
-            )
+            // this.contacts = this.contacts.filter((contact) => 
+            // contact.name.toLowerCase().includes(newSearchContact)
+            // )
+
+            // Creo un ciclo che scorra la lista dei contatti
+            for (let i = 0; i < this.contacts.length; i++) {
+
+                // Il contatto ciclato ha la chiave a Visible QUANDO lo stesso contatto ciclato INCLUDE le lettere date in input
+                // Forma abbreviata 
+                this.contacts[i].visible = this.contacts[i].name.toLowerCase().includes(this.searchContact)
+            }
         }
     },
     mounted() {
