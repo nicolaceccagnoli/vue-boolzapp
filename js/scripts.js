@@ -193,6 +193,7 @@ createApp({
         newObjMessage() {
 
             const newObj = {
+                date: '',
                 message : this.newMessage,
                 status: 'sent'
             }
@@ -200,7 +201,18 @@ createApp({
             if(this.newMessage.trim().length > 0) {
                 this.contacts[this.activeContact].messages.push(newObj)
             }
-            
+
+            const newResponse = {
+                date: '',
+                message: 'ok',
+                status: 'received'
+            }
+
+            let timeout;
+
+            timeout = setTimeout(() => {
+            this.contacts[this.activeContact].messages.push(newResponse)}, 1000)
+
         }
     }
   // Monto l'istanza di Vue in pagina
