@@ -80,7 +80,7 @@
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                          </button>
                                     </span>
-                                    <input type="text" class="form-control rounded-0 " placeholder="Cerca o inizia una nuova chat">
+                                    <input @keyup="searchChat()" v-model="searchContact" type="text" class="form-control rounded-0 " placeholder="Cerca o inizia una nuova chat">
                                   </div>
                             </div>
 

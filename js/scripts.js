@@ -12,6 +12,9 @@ createApp({
             // Creo una variabile con una stringa vuota per il nuovo messaggio dell'utente
             newMessage: '',
 
+            // Creo una Variabile con una stringa vuota per la ricerca delle chat con i contatti
+            searchContact: '',
+
             user: {
                 name: 'Sofia',
                 avatar: './img/avatar_io.jpg'
@@ -192,6 +195,10 @@ createApp({
 
         newObjMessage() {
 
+            const newDate = new Date();
+            
+            console.log(newDate);
+
             const newObj = {
                 date: '',
                 message : this.newMessage,
@@ -200,6 +207,8 @@ createApp({
 
             if(this.newMessage.trim().length > 0) {
                 this.contacts[this.activeContact].messages.push(newObj)
+
+                this.newMessage = '';
             }
 
             const newResponse = {
@@ -212,6 +221,17 @@ createApp({
 
             timeout = setTimeout(() => {
             this.contacts[this.activeContact].messages.push(newResponse)}, 1000)
+
+        },
+
+        searchChat() {
+
+            const newSearchContact = this.searchContact.toLowerCase();
+
+            this.contacts = this.contacts.filter((contact) => 
+            contact.name.toLowerCase().includes(newSearchContact)
+
+            )
 
         }
     }
