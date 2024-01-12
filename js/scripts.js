@@ -15,6 +15,9 @@ createApp({
             // Creo una Variabile con una stringa vuota per la ricerca delle chat con i contatti
             searchContact: '',
 
+            // Dichiato un Array vuoto
+            newContactsObj: [],
+
             user: {
                 name: 'Sofia',
                 avatar: './img/avatar_io.jpg'
@@ -226,14 +229,20 @@ createApp({
 
         searchChat() {
 
+            // Qui aggiorno nuovamente l'array che ho già riempito in mounted() e ci inserisco anche la stringa filtrata nell'input
+            this.contacts = [...this.newContactsObj]
+
             const newSearchContact = this.searchContact.toLowerCase();
 
             this.contacts = this.contacts.filter((contact) => 
             contact.name.toLowerCase().includes(newSearchContact)
-
             )
-
         }
+    },
+    mounted() {
+
+        // Appena Vue viene montato in pagina riempo l'array vuoto con gli elementi di contacts
+        this.newContactsObj = [...this.contacts]
     }
   // Monto l'istanza di Vue in pagina
 }).mount('#app');
