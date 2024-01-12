@@ -27,10 +27,15 @@ html {
 
 */
 
-#user-profile, #user-name, #user-menu i, #notifications a, #search-chat i, 
-.single-chat, #chat-active-container .chat-user-profile img,#chat-active-container .chat-user-profile .chat-user-name, #chat-active-container #chat-user-menu,
-#new-chat i {
+#user-profile, #user-name, #notifications a, 
+.single-chat, #chat-active-container .chat-user-profile img, #chat-active-container .chat-user-profile .chat-user-name, #chat-active-container #chat-user-menu
+{
     cursor: pointer;
+}
+
+button {
+    border-style: none;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* 
@@ -167,8 +172,8 @@ aside header {
     border-bottom: 1px solid #d6dce3f4;
 }
 
-.single-chat:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+.single-chat:hover, .active {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .single-chat div:nth-of-type(2){
@@ -206,9 +211,18 @@ aside header {
 
 */
 
+.chat-user-name small {
+    color: gray;
+}
+
 #chat {
-    background-image: url(/img/mine.jpg);
+    background-image: url(../img/mine.jpg);
     width: 100%;
+}
+
+footer {
+    padding: var(--secondary-padding-size);
+    background-color: var(--menu-bg-color);
 }
 
 /* 

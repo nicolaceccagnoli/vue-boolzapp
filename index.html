@@ -36,9 +36,15 @@
                             </div>
 
                             <div id="user-menu" class="col-6 d-flex align-items-center">
-                                <i class="fa-solid fa-circle-notch"></i>
-                                <i class="fa-solid fa-message"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <button>
+                                    <i class="fa-solid fa-circle-notch"></i>
+                                </button>
+                                <button>
+                                    <i class="fa-solid fa-message"></i>
+                                </button>
+                                <button>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
                             </div>
                             
                         </div>
@@ -70,7 +76,9 @@
                             <div id="search-chat" class="col">
                                 <div class="input-group flex-nowrap">
                                     <span class="input-group-text rounded-0 ">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <button>
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                         </button>
                                     </span>
                                     <input type="text" class="form-control rounded-0 " placeholder="Cerca o inizia una nuova chat">
                                   </div>
@@ -82,8 +90,11 @@
 
                     <!-- Qui inizia la rubrica delle Chat -->
 
-                    <div id="chat-container" >
-                        <div class="single-chat row g-0" v-for="(contact, i) in contacts">
+                    <div id="chat-container"> 
+                        <div class="single-chat row g-0" v-for="(contact, i) in contacts"
+                        :class="{
+                            'active': i == activeContact
+                        }">
 
                             <div class="col-auto user-img">
                                 <img :src="contacts[i].avatar" alt="">
@@ -91,7 +102,7 @@
 
                             <div class="col-auto">
                                 <b>
-                                    {{ contacts[i].name }}
+                                    {{ contact.name }}
                                 </b>
                                 <br>
                                 <small class="message">
@@ -110,10 +121,10 @@
                 <!-- Qui finisce l'aside di Boolzapp -->
 
                 <!-- Qui inizia il Menu delle Chat con gli altri utenti -->
-                <div id="chat-active-container" class="d-flex flex-column">
+                <section id="chat-active-container" class="d-flex flex-column">
 
                     <!-- Qui inizia l'header che mostra l'utente con cui stiamo parlando -->
-                    <header>
+                    <header class="flex-shrink-0 ">
                         <div class="chat-user-profile row m-0 h-100 align-items-center justify-content-between">
 
                             <div class="col-6 d-flex align-items-center">
@@ -121,14 +132,27 @@
                                     <img :src="contacts[0].avatar" :alt="contacts[0].name">
                                 </div>
                                 <div class="chat-user-name">
-                                    {{ contacts[0].name }}
+                                    <span>
+                                       {{ contacts[0].name }}
+                                    </span>
+                                    <br>
+                                    <small>
+                                        Ultimo accesso oggi alle 12:00
+                                    </small>
                                 </div>
+
                             </div>
 
                             <div id="chat-user-menu" class="col-6 d-flex align-items-center">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-solid fa-paperclip"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <button>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                                <button>
+                                    <i class="fa-solid fa-paperclip"></i>
+                                </button>
+                                <button>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
                             </div>
                             
                         </div>  
@@ -136,22 +160,26 @@
                     <!-- Qui finisce l'header che mostra l'utente con cui stiamo parlando -->
 
                     <!-- Qui inizia la chat -->
-                    <main id="chat" class="flex-grow-1">
+                    <main id="chat" class="flex-grow-1 ">
 
                     </main>
                     <!-- Qui finisce la chat -->
 
                     <!-- Qui inizia il footer con l'input di invio dei nuovi messaggi -->
-                    <footer>
+                    <footer class="flex-shrink-0 ">
 
-                        <div class="row g-0 h-100 " id="new-chat">
+                        <div class="row g-0 h-100" id="new-chat">
                             <div class="col input-group flex-nowrap">
-                                <span class="input-group-text rounded-0">
-                                    <i class="fa-regular fa-face-smile"></i>
+                                <span class="input-group-text rounded-0 border-0">
+                                    <button>
+                                        <i class="fa-regular fa-face-smile"></i>
+                                    </button>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Scrivi un messaggio">
-                                <span class="input-group-text rounded-0">
-                                    <i class="fa-solid fa-microphone"></i>
+                                <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
+                                <span class="input-group-text rounded-0 border-0">
+                                    <button>
+                                        <i class="fa-solid fa-microphone"></i>
+                                    </button>
                                 </span>
                             </div>
                         </div>
@@ -159,7 +187,7 @@
                     </footer>
                     <!-- Qui finisce il footer con l'input di invio dei nuovi messaggi -->
 
-                </div>
+                </section>
                 <!-- Qui finisce il Menu delle Chat con gli altri utenti -->
 
             </main>
