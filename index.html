@@ -139,7 +139,7 @@
                                     </span>
                                     <br>
                                     <small>
-                                        Ultimo accesso oggi alle {{ contacts[activeContact].messages[1]['date'] }}
+                                        Ultimo accesso oggi alle {{ contacts[activeContact].messages[0]['date'].split(' ', 2)[1] }}
                                     </small>
                                 </div>
 
@@ -175,7 +175,7 @@
                                         {{ contacts[activeContact].messages[singleMessage]['message'] }}  
                                     </div>
                                     <div class="message-item">
-                                        {{ contacts[activeContact].messages[singleMessage]['date'] }}
+                                        {{ contacts[activeContact].messages[singleMessage]['date'].split(' ', 2)[1] }}
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@
                                         <i class="fa-regular fa-face-smile"></i>
                                     </button>
                                 </span>
-                                <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
+                                <input v-model="newMessage" @keyup.enter="newObjMessage()" type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
                                 <span class="input-group-text rounded-0 border-0">
                                     <button>
                                         <i class="fa-solid fa-microphone"></i>

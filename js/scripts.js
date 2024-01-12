@@ -6,7 +6,11 @@ createApp({
     data() {
         return {
 
+            // Creo un contatore per ciclare sul singolo Contatto
             activeContact: 0,
+
+            // Creo una variabile con una stringa vuota per il nuovo messaggio dell'utente
+            newMessage: '',
 
             user: {
                 name: 'Sofia',
@@ -180,8 +184,23 @@ createApp({
 
         };
     }, methods: {
+
+        // Creo la funzione per aprire la conversazione 
         contactShow(index) {
             this.activeContact = index;
+        },
+
+        newObjMessage() {
+
+            const newObj = {
+                message : this.newMessage,
+                status: 'sent'
+            }
+
+            if(this.newMessage.trim().length > 0) {
+                this.contacts[this.activeContact].messages.push(newObj)
+            }
+            
         }
     }
   // Monto l'istanza di Vue in pagina
