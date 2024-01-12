@@ -179,6 +179,10 @@ createApp({
             ]
 
         };
+    }, methods: {
+        contactShow(index) {
+            this.activeContact = index;
+        }
     }
   // Monto l'istanza di Vue in pagina
 }).mount('#app');

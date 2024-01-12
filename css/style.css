@@ -219,6 +219,7 @@ aside header {
     background-image: url(../img/mine.jpg);
     width: 100%;
     padding: var(--main-padding-size);
+    overflow: auto;
 }
 
 footer {

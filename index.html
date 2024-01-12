@@ -91,7 +91,9 @@
                     <!-- Qui inizia la rubrica delle Chat -->
 
                     <div id="chat-container"> 
-                        <div class="single-chat row g-0" v-for="(contact, i) in contacts"
+                        <div
+                        @click="contactShow(i)"
+                        class="single-chat row g-0" v-for="(contact, i) in contacts"
                         :class="{
                             'active': i == activeContact
                         }">
@@ -129,15 +131,15 @@
 
                             <div class="col-6 d-flex align-items-center">
                                 <div>
-                                    <img :src="contacts[0].avatar" :alt="contacts[0].name">
+                                    <img :src="contacts[activeContact].avatar" :alt="contacts[activeContact].name">
                                 </div>
                                 <div class="chat-user-name">
                                     <span>
-                                       {{ contacts[0].name }}
+                                       {{ contacts[activeContact].name }}
                                     </span>
                                     <br>
                                     <small>
-                                        Ultimo accesso oggi alle 12:00
+                                        Ultimo accesso oggi alle {{ contacts[activeContact].messages[1]['date'] }}
                                     </small>
                                 </div>
 
@@ -163,35 +165,17 @@
                     <main id="chat" class="flex-grow-1 d-flex justify-content-center">
 
                         <div class="small-chat-container">
-                            <div class="single-message-container d-flex justify-content-end sent">
+                            <div v-for="(message, singleMessage) in contacts[activeContact].messages" class="single-message-container d-flex"
+                            :class="{
+                                'sent justify-content-end': message.status == 'sent',
+                                'received': message.status == 'received'
+                                }">
                                 <div class="single-message-item">
                                     <div class="message-text">
-                                        Hai portato a spasso il cane?  
+                                        {{ contacts[activeContact].messages[singleMessage]['message'] }}  
                                     </div>
                                     <div class="message-item">
-                                        15:30
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="single-message-container d-flex justify-content-end sent">
-                                <div class="single-message-item">
-                                    <div class="message-text">
-                                        Hai portato a spasso il cane?  
-                                    </div>
-                                    <div class="message-item">
-                                        15:30
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="single-message-container d-flex justify-content-start  received">
-                                <div class="single-message-item">
-                                    <div class="message-text">
-                                        Tutto Fatto!
-                                    </div>
-                                    <div class="message-item">
-                                        16:15
+                                        {{ contacts[activeContact].messages[singleMessage]['date'] }}
                                     </div>
                                 </div>
                             </div>
