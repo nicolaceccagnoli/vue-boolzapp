@@ -188,6 +188,7 @@ aside header {
     padding-top: var(--secondary-padding-size);
     font-size: 0.8rem;
     color: var(--message-main-color);
+    text-align: end;
 }
 
 

@@ -229,7 +229,7 @@ createApp({
 
         searchChat() {
 
-            // Qui aggiorno nuovamente l'array che ho già riempito in mounted() e ci inserisco anche la stringa filtrata nell'input
+            // Qui aggiorno nuovamente l'array che ho già riempito in mounted() e ci inserisco anche la stringa filtrata nell''input
             this.contacts = [...this.newContactsObj]
 
             const newSearchContact = this.searchContact.toLowerCase();
