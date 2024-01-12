@@ -241,7 +241,7 @@ createApp({
             // Creo un ciclo che scorra la lista dei contatti
             for (let i = 0; i < this.contacts.length; i++) {
 
-                // Il contatto ciclato ha la chiave a Visible QUANDO lo stesso contatto ciclato INCLUDE le lettere date in input
+                // Il contatto ciclato ha la chiave a Visible QUANDO lo stesso contatto ciclato INCLUDE le lettere date in input (allora questa assegnazione è TRUTHY)
                 // Forma abbreviata 
                 this.contacts[i].visible = this.contacts[i].name.toLowerCase().includes(this.searchContact)
             }
