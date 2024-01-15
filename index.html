@@ -10,6 +10,7 @@
 
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
         <!-- Fontawesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
@@ -145,7 +146,7 @@
                                     </span>
                                     <br>
                                     <small>
-                                        Ultimo accesso oggi alle {{ contacts[activeContact].messages[0]['date'].split(' ', 2)[1] }}
+                                        Ultimo accesso oggi alle {{ contacts[activeContact].messages[contacts[activeContact].messages.length-1].date.split(' ', 2)[1] }}
                                     </small>
                                 </div>
 
@@ -186,6 +187,15 @@
                                         {{ contacts[activeContact].messages[singleMessage]['date'].split(' ', 2)[1] }}
                                     </div>
                                 </div>
+
+                                <div class="settings-message">
+                                    <div>
+                                        Message Info
+                                    </div>
+                                    <div>
+                                        Delete Message
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -193,8 +203,8 @@
                     <!-- Qui finisce la chat -->
 
                     <!-- Qui inizia il footer con l'input di invio dei nuovi messaggi -->
-                    <footer class="flex-shrink-0 ">
-
+                    <footer class="flex-shrink-0">
+                    
                         <div class="row g-0 h-100" id="new-chat">
                             <div class="col input-group flex-nowrap">
                                 <span class="input-group-text rounded-0 border-0">

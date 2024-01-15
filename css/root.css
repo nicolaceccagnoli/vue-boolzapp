@@ -13,11 +13,14 @@
     --message-min-height: 50px;
     --padding-message-size: 12px;
     --border-radius-message: 8px;
+    --message-hour-size: 10px;
+    --settings-font-size: smaller;
+    --menu-settings-width: 120px;
+    --menu-settings-border-radius: 5px;
     --sent-message-color: #D5F9BA;
     --received-message-color: #FFFFFF;   
      --icons-color: #B1B1B1;
     --menu-bg-color:#EAEAEA;
     --message-main-color:#cdcdcd;
     --icons-bell-color: #8EDAFC;
-
 }

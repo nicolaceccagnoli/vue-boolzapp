@@ -16,7 +16,9 @@ createApp({
             searchContact: '',
 
             // Dichiato un Array vuoto
-            newContactsObj: [],
+            // newContactsObj: [],
+
+            // Imposto una Flag che controlli la visibiltà del menu settings dei messaggi
 
             user: {
                 name: 'Sofia',
@@ -250,7 +252,10 @@ createApp({
     mounted() {
 
         // Appena Vue viene montato in pagina riempo l'array vuoto con gli elementi di contacts
-        this.newContactsObj = [...this.contacts]
+        // this.newContactsObj = [...this.contacts]
+
+
+
     }
   // Monto l'istanza di Vue in pagina
 }).mount('#app');

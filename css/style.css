@@ -236,6 +236,10 @@ footer {
     padding-bottom: var(--secondary-padding-size);
 }
 
+.single-message-item {   
+    position: relative;
+}
+
 .received .single-message-item {
     min-width: var(--message-min-width);
     max-width: var(--message-max-width);
@@ -256,8 +260,21 @@ footer {
 
 .message-item {
     text-align: end;
-    font-size: 10px;
+    font-size: var(--message-hour-size);
     color: var(--message-main-color);
+}
+
+.settings-message {
+    background-color: var(--menu-bg-color);
+    width: var(--menu-settigs-width);
+    padding: var(--secondary-padding-size);
+    font-size: var(--settings-font-size);
+    line-height: var(--settings-font-size);
+    text-align: end;
+    position: absolute;
+    transform: translate(50%, 50%);
+    z-index: 1;
+    border-radius: var(--menu-settings-border-radius);
 }
 
 /* 
