@@ -218,8 +218,9 @@
                                 v-model="newMessage" @keyup.enter="newObjMessage()" 
                                 type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
                                 <span class="input-group-text rounded-0 border-0">
-                                    <button>
-                                        <i class="fa-solid fa-microphone"></i>
+                                    <button @click="newObjMessage()">
+                                        <i v-show="newMessage.length == 0" class="fa-solid fa-microphone"></i>
+                                        <i v-show="newMessage.length > 0" class="fa-solid fa-paper-plane"></i>
                                     </button>
                                 </span>
                             </div>
