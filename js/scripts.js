@@ -15,19 +15,17 @@ createApp({
             // Creo una Variabile con una stringa vuota per la ricerca delle chat con i contatti
             searchContact: '',
 
-            // Dichiato un Array vuoto
-            // newContactsObj: [],
-
             // Imposto una Flag che controlli la visibiltà del menu settings dei messaggi
             visibleSettings: null,
 
-            activeMessage: 0,
-
+            // Creo una Variabile con una stringa vuota per la risposta dell'utente
             newAnswerString: '',
 
+
+            // Creo l'oggetto utente
             user: {
-                name: 'Sofia',
-                avatar: './img/avatar_io.jpg'
+                name: 'Nicola',
+                avatar: './img/nicola.jpeg'
             },
 
             contacts: [
@@ -205,6 +203,7 @@ createApp({
             this.visibleSettings = null;
         },
 
+        // Creo la funzione per crere i nuovi messaggi dell'utente e la risposta
         newObjMessage() {
             
             this.newRandomString();
@@ -241,16 +240,8 @@ createApp({
 
         },
         
+        // Creo la funzione per cercare le chat degli utenti
         searchChat() {
-
-            // Qui aggiorno nuovamente l'array che ho già riempito in mounted() e ci inserisco anche la stringa filtrata nell''input
-            // this.contacts = [...this.newContactsObj]
-
-            // const newSearchContact = this.searchContact.toLowerCase();
-
-            // this.contacts = this.contacts.filter((contact) => 
-            // contact.name.toLowerCase().includes(newSearchContact)
-            // )
 
             // Creo un ciclo che scorra la lista dei contatti
             for (let i = 0; i < this.contacts.length; i++) {
@@ -261,6 +252,7 @@ createApp({
             }
         },
 
+        // Creo la funzione per mostrare le impostazioni dei singoli messaggi
         showSettings(i){
 
             if(this.visibleSettings == null) {
@@ -275,6 +267,7 @@ createApp({
 
         },
 
+        // Creo la funzione per eliminare il messaggio selezionato
         removeMessage() {
 
             this.contacts[this.activeContact].messages.splice(this.visibleSettings, 1);
@@ -283,6 +276,7 @@ createApp({
 
         },
 
+        // Creo la funzione per generare la risposta dell'utente
         newRandomString() {
             // Richiamo la libreria di Axios
             axios
@@ -296,9 +290,6 @@ createApp({
         }
     },
     mounted() {
-
-        // Appena Vue viene montato in pagina riempo l'array vuoto con gli elementi di contacts
-        // this.newContactsObj = [...this.contacts]
 
         console.log(moment);
 

@@ -90,6 +90,7 @@ aside header {
     height: var(--user-profile-img-size);
     width: var(--user-profile-img-size);
     border-radius: 50%;
+    object-fit: cover;
 }
 
 #user-menu, #chat-user-menu {
