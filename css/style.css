@@ -265,7 +265,7 @@ footer {
 }
 
 .settings-message {
-    background-color: var(--menu-bg-color);
+    background-color: rgb(203, 202, 202);
     width: var(--menu-settigs-width);
     padding: var(--secondary-padding-size);
     font-size: var(--settings-font-size);
@@ -281,6 +281,12 @@ footer {
     text-decoration: none;
     display: block;
     color: black;
+}
+
+.settings-message a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 2px;
 }
 
 /* 

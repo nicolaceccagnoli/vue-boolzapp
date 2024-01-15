@@ -112,12 +112,12 @@
                                         {{ contact.name }}
                                     </b>
                                     <br>
-                                    <small class="message">
+                                    <small v-if="contact.messages.length > 0" class="message">
                                         {{ contacts[i].messages[contacts[i].messages.length-1].message }}
                                     </small>
                                 </div>
 
-                                <div class="col-auto flex-grow-1 pe-2">
+                                <div v-if="contact.messages.length > 0" class="col-auto flex-grow-1 pe-2">
                                     {{ contacts[i].messages[contacts[i].messages.length-1].date.split(' ', 2)[1] }}
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                        {{ contacts[activeContact].name }}
                                     </span>
                                     <br>
-                                    <small>
+                                    <small v-if="contacts[activeContact].messages.length > 0">
                                         Ultimo accesso oggi alle {{ contacts[activeContact].messages[contacts[activeContact].messages.length-1].date.split(' ', 2)[1] }}
                                     </small>
                                 </div>

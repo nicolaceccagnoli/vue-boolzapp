@@ -270,11 +270,10 @@ createApp({
 
         removeMessage() {
 
-            let activeMessage = this.contacts[this.activeContact].messages;
+                this.contacts[this.activeContact].messages.splice(this.visibleSettings, 1);
 
-            console.log(activeMessage);
+                console.log(this.contacts[this.activeContact])
 
-            this.contacts[this.activeContact].messages.splice(activeMessage, 1);
         }
     },
     mounted() {
