@@ -99,13 +99,12 @@ aside header {
     margin-right: var(--main-margin-size);
 }
 
-#user-name, .chat-user-name {
-    padding: var(--secondary-padding-size);
-}
-
 #user-menu i, #chat-user-menu i {
     font-size: var(--icons-main-size);
     color: var(--icons-color);
+}
+
+#user-menu button, #chat-user-menu button {
     margin-right: var(--secondary-margin-size);
 }
 
