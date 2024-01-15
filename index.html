@@ -178,7 +178,8 @@
                             :class="{
                                 'sent justify-content-end': message.status == 'sent',
                                 'received': message.status == 'received'
-                                }">
+                                }"
+                                @click="showSettings()">
                                 <div class="single-message-item">
                                     <div class="message-text">
                                         {{ contacts[activeContact].messages[singleMessage]['message'] }}  
@@ -188,13 +189,13 @@
                                     </div>
                                 </div>
 
-                                <div class="settings-message">
-                                    <div>
+                                <div v-show="visibleSettings == true" class="settings-message">
+                                    <a href="#">
                                         Message Info
-                                    </div>
-                                    <div>
+                                    </a>
+                                    <a href="#" @click="removeMessage()">
                                         Delete Message
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -277,6 +277,12 @@ footer {
     border-radius: var(--menu-settings-border-radius);
 }
 
+.settings-message a {
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
 /* 
 
     DEBUG

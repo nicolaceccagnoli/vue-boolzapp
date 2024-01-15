@@ -19,6 +19,7 @@ createApp({
             // newContactsObj: [],
 
             // Imposto una Flag che controlli la visibiltà del menu settings dei messaggi
+            visibleSettings: false,
 
             user: {
                 name: 'Sofia',
@@ -247,6 +248,22 @@ createApp({
                 // Forma abbreviata 
                 this.contacts[i].visible = this.contacts[i].name.toLowerCase().includes(this.searchContact)
             }
+        },
+
+        showSettings(){
+
+            if(this.visibleSettings == false) {
+                this.visibleSettings = true;
+            } else {
+                this.visibleSettings = false;
+            }
+        },
+
+        removeMessage() {
+
+            let activeMessage =  this.contacts[this.activeContact].messages[this.contacts[this.activeContact].message];
+
+            this.contacts[this.activeContact].messages.splice(activeMessage, 1);
         }
     },
     mounted() {
