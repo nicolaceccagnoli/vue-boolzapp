@@ -19,7 +19,9 @@ createApp({
             // newContactsObj: [],
 
             // Imposto una Flag che controlli la visibiltà del menu settings dei messaggi
-            visibleSettings: false,
+            visibleSettings: null,
+
+            activeMessage: 0,
 
             user: {
                 name: 'Sofia',
@@ -197,6 +199,8 @@ createApp({
         // Creo la funzione per aprire la conversazione 
         contactShow(index) {
             this.activeContact = index;
+
+            this.visibleSettings = null;
         },
 
         newObjMessage() {
@@ -250,18 +254,25 @@ createApp({
             }
         },
 
-        showSettings(){
+        showSettings(i){
 
-            if(this.visibleSettings == false) {
-                this.visibleSettings = true;
+            if(this.visibleSettings == null) {
+
+                this.visibleSettings = i;                
+
             } else {
-                this.visibleSettings = false;
+
+                this.visibleSettings = null;
+
             }
+
         },
 
         removeMessage() {
 
-            let activeMessage =  this.contacts[this.activeContact].messages[this.contacts[this.activeContact].message];
+            let activeMessage = this.contacts[this.activeContact].messages;
+
+            console.log(activeMessage);
 
             this.contacts[this.activeContact].messages.splice(activeMessage, 1);
         }
