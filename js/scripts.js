@@ -23,6 +23,8 @@ createApp({
 
             activeMessage: 0,
 
+            newAnswerString: '',
+
             user: {
                 name: 'Sofia',
                 avatar: './img/avatar_io.jpg'
@@ -204,6 +206,9 @@ createApp({
         },
 
         newObjMessage() {
+            
+            this.newRandomString();
+            console.log(this.newAnswerString, 'questo è newAnswerString');
 
             const newDate = new Date();
             
@@ -221,19 +226,21 @@ createApp({
                 this.newMessage = '';
             }
 
-            const newResponse = {
-                date: moment().format('LLL'),
-                message: 'ok',
-                status: 'received'
-            }
-
             let timeout;
 
             timeout = setTimeout(() => {
+
+                const newResponse = {
+                date: moment().format('LLL'),
+                message: this.newAnswerString,
+                status: 'received'
+
+            }
+
             this.contacts[this.activeContact].messages.push(newResponse)}, 1000)
 
         },
-
+        
         searchChat() {
 
             // Qui aggiorno nuovamente l'array che ho già riempito in mounted() e ci inserisco anche la stringa filtrata nell''input
@@ -270,10 +277,22 @@ createApp({
 
         removeMessage() {
 
-                this.contacts[this.activeContact].messages.splice(this.visibleSettings, 1);
+            this.contacts[this.activeContact].messages.splice(this.visibleSettings, 1);
 
-                console.log(this.contacts[this.activeContact])
+            console.log(this.contacts[this.activeContact])
 
+        },
+
+        newRandomString() {
+            // Richiamo la libreria di Axios
+            axios
+                .get('https://flynn.boolean.careers/exercises/api/random/sentence')     // Tramite la proprietà .get richiamo l'API
+                .then((res) => {    
+                   
+                this.newAnswerString = res.data.response;                           // Uso la risposta dell'Api per creare la risposta casuale dell'utente
+
+                console.log(this.newAnswerString)
+            })
         }
     },
     mounted() {
@@ -281,7 +300,7 @@ createApp({
         // Appena Vue viene montato in pagina riempo l'array vuoto con gli elementi di contacts
         // this.newContactsObj = [...this.contacts]
 
-        console.log(moment)
+        console.log(moment);
 
     }
   // Monto l'istanza di Vue in pagina
