@@ -225,19 +225,6 @@ createApp({
                 this.newMessage = '';
             }
 
-            let timeout;
-
-            timeout = setTimeout(() => {
-
-                const newResponse = {
-                date: moment().format('LLL'),
-                message: this.newAnswerString,
-                status: 'received'
-
-            }
-
-            this.contacts[this.activeContact].messages.push(newResponse)}, 1000)
-
         },
         
         // Creo la funzione per cercare le chat degli utenti
@@ -275,7 +262,6 @@ createApp({
             console.log(this.contacts[this.activeContact])
 
         },
-
         // Creo la funzione per generare la risposta dell'utente
         newRandomString() {
             // Richiamo la libreria di Axios
@@ -286,6 +272,20 @@ createApp({
                 this.newAnswerString = res.data.response;                           // Uso la risposta dell'Api per creare la risposta casuale dell'utente
 
                 console.log(this.newAnswerString)
+
+                let timeout;
+
+                timeout = setTimeout(() => {
+    
+                    const newResponse = {
+                    date: moment().format('LLL'),
+                    message: this.newAnswerString,
+                    status: 'received'
+    
+                }
+    
+                this.contacts[this.activeContact].messages.push(newResponse)}, 1000)
+    
             })
         }
     },
