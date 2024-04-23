@@ -1,26 +1,70 @@
-# vue-boolzapp
-Descrizione
-Implementate l'esercizio seguendo il brief che trovato a questo link:
+# BoolZapp - Vue.js Messaging App
 
-Milestone 1
- - Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
- - Visualizzazione dinamica della lista contatti: tramite la direttiva v-for,       visualizzare nome e immagine di ogni contatto
-Milestone 2
-- Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
-- Click sul contatto mostra la conversazione del contatto cliccato
+BoolZapp is a web-based instant messaging application developed with Vue.js, partially replicating the interface and some features of WhatsApp. Users can view a list of contacts, select a contact to view their conversation, and send new messages.
 
+## Key Features
 
-Milestone 3
-- Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-- Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
-Milestone 4
-- Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
-Milestone 5 - opzionale
-- Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
-- Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 
+- Interface divided into two panels: one for the contact list and one to display the conversation with the selected contact
+- Dynamic display of contacts with name and profile picture
+- Dynamic display of messages related to the selected contact
+- Sending new messages via text input
+- Implementation of additional milestones such as contact search, message deletion, display of the time and the last sent/received message
 
-Consigli utili:
-Si possono trascurare le scrollbar verticali, sia nel pannello dei messaggi, che nella lista dei contatti
-I pulsanti e le icone possono non funzionare (a parte l’invio del messaggio)
-Per gestire le date, può essere utile la libreria Luxon
-La struttura dell’array dei contatti potrebbe avere questa forma:
+## Technologies Used
+
+- Vue.js
+- HTML
+- CSS
+- Luxon library for date management
+
+## Installation
+
+1. Clone this repository to your local machine
+2. Open the terminal and navigate to the project directory
+3. Install dependencies by running the command `npm install`
+
+## Running the Application
+
+After installing the dependencies, start the application by running the command `npm run serve` in the terminal. The application will be accessible at `http://localhost:8080` (or the URL specified by the development server) in your browser.
+
+## Project Structure
+
+- `src/App.vue`: Main application component
+- `src/components/ContactList.vue`: Component for the contact list
+- `src/components/MessageThread.vue`: Component for displaying the conversation
+- `src/components/MessageInput.vue`: Component for new message input
+- `src/data/contacts.js`: File containing contact data
+
+## Notes
+
+- Vertical scrollbars, both in the message panel and the contact list, can be disregarded
+- Buttons and icons may not be functional, except for sending messages
+- The structure of the contacts array might have the following format:
+
+```
+[
+  {
+    name: "Michele",
+    avatar: "img/avatar_1.jpg",
+    visible: true,
+    messages: [
+      {
+        date: "10/01/2020 15:30:55",
+        message: "Did you walk the dog?",
+        status: "sent"
+      },
+      {
+        date: "10/01/2020 15:50:00",
+        message: "Remember to hang the laundry",
+        status: "sent"
+      },
+      {
+        date: "10/01/2020 16:15:22",
+        message: "All done!",
+        status: "received"
+      }
+    ]
+  }
+  // Other contacts...
+]
+```
