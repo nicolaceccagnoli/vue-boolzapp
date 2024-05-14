@@ -115,7 +115,13 @@
                                     </b>
                                     <br>
                                     <small v-if="contact.messages.length > 0" class="message">
-                                        {{ contacts[i].messages[contacts[i].messages.length-1].message }}
+                                        {{ 
+                                            contacts[i].messages[contacts[i].messages.length-1].message.length > 20 
+                                            ?
+                                            contacts[i].messages[contacts[i].messages.length-1].message.substring(0, 20) + '...' 
+                                            : 
+                                            contacts[i].messages[contacts[i].messages.length-1].message
+                                        }}
                                     </small>
                                 </div>
 
